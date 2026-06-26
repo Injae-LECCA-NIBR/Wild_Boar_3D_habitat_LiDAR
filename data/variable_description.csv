@@ -1,0 +1,15 @@
+﻿variable,source_column,label,description,unit,derivation,transformation,category,analysis_retained,note
+DEM,DEM,Elevation,Ground elevation above sea level,m,1-m LiDAR-derived digital elevation model,none,Topography,yes,
+TRI,TRI,TRI,Terrain Ruggedness Index; Mean elevation difference between a focal cell and its neighbors,index (m),"GDAL, fixed 3x3 neighborhood on DEM",none,Topography,yes,
+TPI,TPI,TPI,Topographic Position Index; Elevation of a focal cell relative to the mean of its neighbors,index (m),"GDAL, fixed 3x3 neighborhood on DEM",none,Topography,yes,
+TWI,TWI,TWI,Topographic Wetness Index; Steady-state wetness from upslope contributing area and local slope,dimensionless,ln(alpha / tan(beta)) from DEM (Beven & Kirkby 1979),none,Topography,yes,
+slope,slope,Slope,Terrain slope,degrees,Derived from DEM,none,Topography,no,Excluded in screening: high collinearity with TRI
+northness,aspect,Northness,North-south component of aspect (-1 indicates south and 1 indicates north),dimensionless,cos(aspect); aspect derived from DEM (Beers et al. 1966),cos(aspect) in analysis (R),Topography,yes,
+eastness,aspect,Eastness,East-west component of aspect (-1 indicates west and 1 indicates east),dimensionless,sin(aspect); aspect derived from DEM (Beers et al. 1966),sin(aspect) in analysis (R),Topography,yes,
+CHM,CHM,Canopy Height,Height of vegetation above ground,m,DSM minus DEM,none,Forest structure,yes,
+canopy_cover,canopy_cover,Canopy Cover,Proportion of ground covered by canopy returns,proportion (0-1),LiDAR360 forestry metrics on normalized point cloud,none,Forest structure,yes,
+gap_fraction,gap_fraction,Gap Fraction,Proportion of sky not obscured by canopy (complement of canopy cover),proportion (0-1),LiDAR360 forestry metrics on normalized point cloud,none,Forest structure,no,Excluded in screening: perfect inverse dependence with canopy_cover (r = -1.0)
+LAI,LAI,Leaf Area Index,One-sided leaf area per unit ground surface area,m2/m2,LiDAR360 forestry metrics on normalized point cloud,none,Forest structure,yes,
+density0,density0,Understory Density,Relative point density in the lowest 0-3 m stratum,proportion (0-1),Vertical stratification of normalized point cloud (lowest of ten ~3-m strata),none,Forest structure,yes,
+log_Deck,deck,Distance to Deck Roads,Euclidean distance to elevated deck-road infrastructure,m (raw); log scale in analysis,Euclidean distance to deck roads,log(x + 1) in analysis (R),Anthropogenic disturbance,yes,
+log_Trail,trail,Distance to Hiking Trails,Euclidean distance to ground-level hiking trails,m (raw); log scale in analysis,Euclidean distance to hiking trails,log(x + 1) in analysis (R),Anthropogenic disturbance,yes,
