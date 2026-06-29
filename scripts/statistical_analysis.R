@@ -2,7 +2,7 @@
 ## Behavior-specific 3D habitat associations of wild boar (Sus scrofa)
 ## in an urban-edge forest, Bukhansan National Park, Seoul, Republic of Korea
 ##
-## Data: thermal-UAV behavioral observations georeferenced by ray-terrain
+## Data: thermal-drone behavioral observations georeferenced by ray-terrain
 ##   intersection, paired with LiDAR-derived 3D habitat covariates.
 ## Behaviors: traveling, resting_day, resting_night.
 ##
