@@ -19,11 +19,11 @@ wild-boar-3d-habitat-lidar/
 
 ## Workflow
 
-1. **Behavior classification** — UAV thermal/RGB observations are classified in
+1. **Behavior classification** — drone thermal/RGB observations are classified in
    the ethogram (`data/Ethogram.csv`) into traveling, daytime resting, and
    nighttime resting.
 2. **Coordinate extraction** — `scripts/ray_terrain_intersection.py` projects a
-   ray from each UAV pose (position, altitude, gimbal azimuth/pitch) and
+   ray from each drone pose (position, altitude, gimbal azimuth/pitch) and
    intersects it with the DEM to recover the ground coordinate of each observed
    boar.
 3. **Habitat variables** — habitat rasters are overlaid on the coordinates in
@@ -40,7 +40,7 @@ The statistical analysis is fully reproducible from this repository:
 reproduces the reported results.
 
 Coordinate extraction is not reproducible from the public files alone.
-`ray_terrain_intersection.py` is provided for transparency, but the UAV flight
+`ray_terrain_intersection.py` is provided for transparency, but the drone flight
 logs it reads and the individual boar coordinates it produces are restricted by
 the data owner (see *Data availability*) and are available on request.
 
@@ -83,7 +83,7 @@ The consolidated ethogram, the analysis-ready habitat-variable dataset
 (excluding individual coordinates), the digital elevation model, and all code
 are openly available here and archived at Zenodo (DOI: 10.5281/zenodo.XXXXXXX).
 
-Individual boar coordinates, UAV flight logs, and raw video are not released as
+Individual boar coordinates, drone flight logs, and raw video are not released as
 fully open data because, although wild boar are not an endangered species, the
 data owner (Ministry of Climate, Energy and Environment, Republic of Korea)
 restricts their full open-source release. These materials are available from the
