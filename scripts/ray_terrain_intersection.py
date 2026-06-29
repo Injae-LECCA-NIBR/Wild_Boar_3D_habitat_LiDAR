@@ -16,7 +16,7 @@ A single consolidated ethogram drives everything through its `type` column:
                                         `time_start`; camera azimuth from the
                                         aircraft `compass_heading(degrees)`.
 
-Both azimuth sources were validated against UAV video for their respective
+Both azimuth sources were validated against drone video for their respective
 sessions (see README, "Camera heading").
 
 INPUT
@@ -30,7 +30,7 @@ OUTPUT
            (boar_lat/lon in WGS84, EPSG:4326)
 
 ALTITUDE / CRS
-  UAV altitude: flight-log MSL field `altitude_above_seaLevel(feet)` (N_M = 0.0).
+  drone altitude: flight-log MSL field `altitude_above_seaLevel(feet)` (N_M = 0.0).
   DEM CRS is read from the raster (dem.crs); DEM provided here is EPSG:32652.
   Output coordinates are WGS84 (EPSG:4326). See README/Methods for the
   vertical-reference rationale.
